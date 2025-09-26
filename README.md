@@ -1,0 +1,33 @@
+import java.util.*;
+public class otp_generator {
+
+	public static void main(String[] args) {
+		Scanner nil = new Scanner(System.in);
+		Random random= new Random();
+		long r;
+		System.out.println("Enter the number of digits  in the \"OTP\" =");
+	    int n= nil.nextInt();
+		
+		char ch = 'x';
+		while(ch!='y') {
+		    
+		    if (n>0) {
+		    	ch='y';
+		    	
+		    }
+		    else {
+		    	System.out.println("Re-enter the value in non zero ");
+		    	n=nil.nextInt();
+		    }
+		}
+		int max=0,min=0;
+		for(int i=0;i<=n-1;i++) {
+			max += 9*Math.pow(10, i);
+			min += 1*Math.pow(10, i);
+		}
+		r= random.nextInt(max-min+1)+min;
+		System.out.println("The \"OTP\" is "+r);	
+			}
+			
+		}
+		
